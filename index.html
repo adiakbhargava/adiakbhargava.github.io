@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proflekt.com</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: "Consolas", monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .ascii-container {
+            text-align: center;
+            position: relative;
+            width: 280px;
+            height: 200px;
+            margin-bottom: 40px;
+        }
+        .ascii-art {
+            display: inline-block;
+            white-space: pre;
+            font-size: 16px;
+            line-height: 1.1;
+            text-align: left;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .work-in-progress {
+            font-size: 24px;
+            margin-top: 20px;
+            animation: blink 1.5s infinite;
+            text-align: center;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .domain {
+            color: #000000;
+            font-weight: bold;
+        }
+        
+        /* Animation frames for the ASCII art */
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .frame.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <div class="ascii-container">
+            <!-- Frame 1 -->
+            <pre class="ascii-art frame" id="frame1">      .     :     .
+  .  .  .   `   , ` ,
+ .; .  : .' ,  :  :
+ i..`: i` i.i.,i  i .
+ `',__|i_|i |i|ii|i;
+   coU'  `;~`-.~.|_ '
+  (_,            ) `
+    (           )
+     `~,_.~._.~'
+      /  | /^\   <span class="domain">proflekt.com</span></pre>
+
+            <!-- Frame 2 -->
+            <pre class="ascii-art frame" id="frame2">      :     .     :
+  .  .  `   .   . ` .
+ :; .  . ,' .  :  .
+ i..`: i` i.i.,i  i ,
+ `',__|i_|i |i|ii|i;
+   coU'  `;~`-.~.|_ '
+  (_,            ) `
+    (           )
+     `~,_.~._.~'
+      /  | /^\   <span class="domain">proflekt.com</span></pre>
+
+            <!-- Frame 3 -->
+            <pre class="ascii-art frame" id="frame3">      .     .     .
+  :  .  .   `   , ` ,
+ .; :  : .' ,  .  :
+ i..`: i` i.i.,i  i .
+ `',__|i_|i |i|ii|i;
+   coU'  `;~`-.~.|_ '
+  (_,            ) `
+    (           )
+     `~,_.~._.~'
+      /  | /^\   <span class="domain">proflekt.com</span></pre>
+        </div>
+        <div class="work-in-progress">work in progress...</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const frames = document.querySelectorAll('.frame');
+            let currentFrame = 0;
+            
+            // Set the first frame as active initially
+            frames[0].classList.add('active');
+            
+            // Animation loop
+            setInterval(() => {
+                // Hide current frame
+                frames[currentFrame].classList.remove('active');
+                
+                // Move to next frame
+                currentFrame = (currentFrame + 1) % frames.length;
+                
+                // Show new frame
+                frames[currentFrame].classList.add('active');
+            }, 600);
+        });
+    </script>
+</body>
+</html>
