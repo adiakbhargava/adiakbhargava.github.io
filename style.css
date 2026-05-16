@@ -1,0 +1,186 @@
+h1 {
+    margin-bottom: 0;
+}
+
+/* Remove spacing from the header and its text */
+header {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2; /* Prevents extra height from line spacing */
+}
+
+header h1 {
+    margin: 0 !important; 
+    padding-top: 0 !important;
+    padding-bottom: 0px; /* Adjust only if you want space BELOW the title */
+}
+
+/* Ensure the intro text doesn't push the title up/down */
+main p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+ul {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+li {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.image-link {
+            display: inline-block;
+            width: 180px;
+            height: 180px;
+            background-image: url('press-me-1.png');
+            background-size: cover;
+            text-decoration: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+/* swap image while mouse is held down */
+.image-link:active {
+    background-image: url('press-me-2.png');
+}
+
+.main-assets-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* aligns them by the top */
+    gap: 10px; /* space between images */
+}
+
+/* stacks donkey counter vertically */
+.donkey-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 275px;
+
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.counter-box {
+    font-family: 'Times New Roman';
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-left: 5px;
+    white-space: nowrap;
+    margin-top: 5px
+}
+
+footer {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* THE HITBOX FIX */
+#hitbox {
+    position: absolute;
+    width: 70px;
+    height: 65px;
+    top: 72px;
+    left: 95px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    /* border: 2px dashed red; */
+}
+
+/* This ensures the Links and Board sit next to each other */
+.main-assets-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px; /* space between the list and the board */
+    margin-bottom: 20px;
+}
+
+.links-column {
+    min-width: 250px; /* Adjust based on your link length */
+}
+
+main p {
+    margin-top: 0;
+    margin-bottom: 10px
+}
+
+/* Main layout wrapper */
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 0;
+}
+
+/* Top Section: side-by-side */
+.top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Left controls: stacks links and button vertically */
+.left-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 275px; /* Matches donkey width for a perfectly clean left edge */
+    flex-shrink: 0;
+}
+
+/* Prevents the Go board from shrinking */
+.right-board {
+    flex-shrink: 0;
+}
+
+/* Bottom Section: locks donkey and bubbles horizontally */
+.bottom-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Aligns donkey and bubbles perfectly at the top */
+    gap: 20px;
+}
+
+/* Bubbles container */
+.speech-bubbles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px; /* Lowers the bubbles slightly to align better with the donkey's mouth */
+}
+
+/* Keeps the links clean */
+.links-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.game-ui {
+    display: none; /* This will now work because the inline override is gone */
+    margin-bottom: 0px;
+    margin-top: 2px;
+    gap: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    align-items: center;
+}
